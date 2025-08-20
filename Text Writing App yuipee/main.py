@@ -5,7 +5,7 @@ from flask import Flask, render_template
 import datetime as dt
 
 
-#|||| App initialization + .env load ||||#
+#|||| App initialization ||||#
 
 app=Flask(__name__)
 
