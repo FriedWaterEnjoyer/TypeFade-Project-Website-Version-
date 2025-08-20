@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TypeFade</title>
+
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <textarea class="timed-text edu-nsw-act-cursive-type" placeholder="Start typing here"></textarea>
+
+    <div class="timer-div">
+
+        <p id="timer" class="edu-nsw-act-cursive-type">03:00</p>
+
+    </div>
+
+    <script>
+
+            function countdown(element, minutes, seconds) {
+
+            // set time for the particular countdown.
+
+            var time = minutes*60 + seconds;
+            var interval = setInterval(function() {
+            var el = document.getElementById(element);
+
+            if(time === 0) {
+
+                window.location.replace("/"); // Redirecting the user to the index.html with the .replace method. If the time is 0.
+
+            };
+
+            var minutes = Math.floor( time / 60 );
+            if (minutes < 10) minutes = "0" + minutes;
+            var seconds = time % 60;
+            if (seconds < 10) seconds = "0" + seconds; 
+            var text = minutes + ':' + seconds;
+            el.innerHTML = text;
+            time--;
+        }, 1000);
+
+        };
+
+        countdown("timer", 3, 0);
+
+    </script>
+
+</body>
+</html>
