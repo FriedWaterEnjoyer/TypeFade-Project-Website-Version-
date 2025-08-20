@@ -2,18 +2,12 @@
 
 
 from flask import Flask, render_template
-import os
-from dotenv import load_dotenv
 import datetime as dt
 
 
 #|||| App initialization + .env load ||||#
 
-
-load_dotenv()
-
 app=Flask(__name__)
-app.config["SECRET_KEY"] = os.getenv("API_KEY")
 
 da_year = dt.datetime.now().year
 
